@@ -434,9 +434,9 @@
   Output: "First, create a new histogram of cm and store it in h just like you did earlier
     but this time around, use the ylim argument to set the limits of the y axis to 0 and 25,
     instead of the c(0, 20) R chose by default."
-  CorrectAnswer: h <- hist(cm, ylim = c(0, 25)
-  AnswerTests: match_call('h <- hist(cm, ylim = c(0, 25)')
-  Hint: "Type h <- hist(cm, ylim = c(0, 25)."
+  CorrectAnswer: h <- hist(cm, ylim = c(0, 25))
+  AnswerTests: match_call('h <- hist(cm, ylim = c(0, 25))')
+  Hint: "Type h <- hist(cm, ylim = c(0, 25))."
   
 - Class: cmd_question
   Output: "See how the y axis changed? Now, all you need to do is simply to reuse the lines()
