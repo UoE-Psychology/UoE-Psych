@@ -81,10 +81,10 @@
     c().
     
 - Class: mult_question
-  Output: "I can think of at least 4 different but equivalent ways of doing this. Picking one
+  Output: "I can think of at least 6 different but equivalent ways of doing this. Picking one
     of them boils down to personal taste. Which one do you find the most appealing?"
   AnswerChoices: df[df$rt < 100, c(6,7)]; df[df$rt < 100, c("item_1", "item_2")];
-    df[df[ ,5] < 100, c(6, 7)]; df[df[ ,5] < 100, c("item_1", "item_2")]
+    df[df[ ,5] < 100, c(6, 7)]; df[df[ ,5] < 100, c("item_1", "item_2")]; df[df$rt < 100, 6:7]; df[df[ ,5] < 100, 6:7]
   CorrectAnswer:
   AnswerTests: omnitest()
   Hint:
@@ -150,7 +150,7 @@
 
 - Class: cmd_question
   Output: However, you may recall that we turned the variables into ordered factors and R
-    doesn't let us to perform arithmetic operations on these. To get around this issue, put
+    doesn't let us to perform arithmetic operations on these. To get around this issue, remember to put
     each variable into as.numeric().
   CorrectAnswer: df_clean$total <- (as.numeric(df_clean$item_1) +
     as.numeric(df_clean$item_2)) / 2
@@ -320,7 +320,7 @@
     just for you) by id into a new data frame called df_merged."
   CorrectAnswer: df_merged <- merge(df_clean, df2, by ="id")
   AnswerTests: match_call('df_merged <- merge(df_clean, df2, by ="id")')
-  Hint: 
+  Hint: remember the by=\"id\" argument of the merge function. 
 
 - Class: cmd_question
   Output: "Take a look at df_merged."
@@ -350,12 +350,12 @@
     despite a difference in row numbers?"
   
 - Class: cmd_question
-  Output: "Well, that's what the \"all\" argument is for. As you can see in the documentation
+  Output: "Well, that's what the \"all\" argument of the merge function is for. As you can see in the documentation
     it takes a logical value. Use the merge() function with the all argument to print
     a merged df consisting of df_clean and df2. Don't store it in an object."
   CorrectAnswer: merge(df_clean, df2, by="id", all = TRUE)
-  AnswerTests: match_call('merge(df_clean, df2, by="id", all = TRUE)')
-  Hint:
+  AnswerTests: any_of_exprs('merge(df_clean, df2, by="id", all = TRUE)', 'merge(df_clean, df2, by="id", all = T)', 'merge(df2, df_clean, by="id", all = TRUE)', 'merge(df2, df_clean, by="id", all = T)')
+  Hint: merge(df_clean, df2, by="id", all = TRUE)
 
 - Class: text
   Output: "There's two more arguments worth knowing about and those are all.x and all.y.
@@ -379,8 +379,9 @@
     to remove missing values prior to calculating the means."
   CorrectAnswer: aggregate(df_merged, by = list(df_merged$gender, df_merged$group),
     FUN = mean, na.rm=TRUE)
-  AnswerTests: match_call('aggregate(df_merged, by = list(df_merged$gender, df_merged$group),
-    FUN = mean, na.rm=TRUE)')
+  AnswerTests: any_of_exprs('aggregate(df_merged, by = list(df_merged$gender, df_merged$group),
+    FUN = mean, na.rm=TRUE)', 'aggregate(df_merged, by = list(df_merged$gender, df_merged$group),
+    FUN = mean, na.rm=T)')
   Hint: Remember to put df_merged$ before the grouping variables and put them both in a list().
   
 - Class: text
@@ -393,8 +394,8 @@
     first argument."
   CorrectAnswer: "aggregate(df_merged[ , c(3,5,8:13)], by = list(df_merged$gender,
     df_merged$group), FUN = mean, na.rm=TRUE)"
-  AnswerTests: match_call('aggregate(df_merged[ , c(3,5,8:13)], by =
-    list(df_merged$gender, df_merged$group), FUN = mean, na.rm=TRUE)')
+  AnswerTests: any_of_exprs('aggregate(df_merged[ , c(3,5,8:13)], by =
+    list(df_merged$gender, df_merged$group), FUN = mean, na.rm=TRUE)', 'aggregate(df_merged[ , c(3,5,8:13)], by = list(df_merged$gender, df_merged$group), FUN = mean, na.rm=T)')
   Hint: "It's the same command as before only this time it goes
     aggregate(df_merged[ , c(3,5,8:13)]..."
     
