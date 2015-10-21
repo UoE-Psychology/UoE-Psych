@@ -131,7 +131,7 @@
 - Class: cmd_question
   Output: "Rerun the last command, but this time, add the notch = TRUE argument."
   CorrectAnswer: boxplot(rt ~ group, data = df, notch = TRUE)
-  AnswerTests: match_call('boxplot(rt ~ group, data = df, notch = TRUE)')
+  AnswerTests: any_of_exprs('boxplot(rt ~ group, data = df, notch = TRUE)', 'boxplot(rt ~ group, data = df, notch = T)')
   Hint:
   
 - Class: text
@@ -143,7 +143,7 @@
   Output: "You can also get a boxplot for every combination of two factors. See what happens
     if you rerun the last command, but add \" * gender\" to the formula."
   CorrectAnswer: boxplot(rt ~ group * gender, data = df, notch = TRUE)
-  AnswerTests: match_call('boxplot(rt ~ group * gender, data = df, notch = TRUE)')
+  AnswerTests: any_of_exprs('boxplot(rt ~ group * gender, data = df, notch = TRUE)', 'boxplot(rt ~ group * gender, data = df, notch = T)')
   Hint: "Simply type boxplot(rt ~ group * gender, data = df, notch = TRUE)."
   
 - Class: text
@@ -158,7 +158,8 @@
     c(\"darkorchid\", \"forestgreen\"). Yes, those are actual colours."
   CorrectAnswer: boxplot(rt ~ group * gender, data = df, notch = TRUE,
     col=c("darkorchid", "forestgreen"))
-  AnswerTests: match_call('boxplot(rt ~ group * gender, data = df, notch = TRUE,
+  AnswerTests: any_of_exprs('boxplot(rt ~ group * gender, data = df, notch = TRUE,
+    col=c("darkorchid", "forestgreen"))', 'boxplot(rt ~ group * gender, data = df, notch = T,
     col=c("darkorchid", "forestgreen"))')
   Hint: "Simply type boxplot(rt ~ group * gender, data = df, notch = TRUE,
     col=c(\"darkorchid\", \"forestgreen\"))."
@@ -168,8 +169,8 @@
     time (ms)\" to the command."
   CorrectAnswer: boxplot(rt ~ group * gender, data = df, notch = TRUE,
     col=c("darkorchid", "forestgreen"), ylab="Reaction time (ms)")
-  AnswerTests: match_call('boxplot(rt ~ group * gender, data = df, notch = TRUE,
-    col=c("darkorchid", "forestgreen"), ylab="Reaction time (ms)")')
+  AnswerTests: any_of_exprs('boxplot(rt ~ group * gender, data = df, notch = TRUE,
+    col=c("darkorchid", "forestgreen"), ylab="Reaction time (ms)")', 'boxplot(rt ~ group * gender, data = df, notch = T, col=c("darkorchid", "forestgreen"), ylab="Reaction time (ms)")')
   Hint: "That's boxplot(rt ~ group * gender, data = df, notch = TRUE,
     col=c(\"darkorchid\", \"forestgreen\"), ylab=\"Reaction time (ms)\")."
 
@@ -183,8 +184,8 @@
     argument. Add it to the plot command now."
   CorrectAnswer: boxplot(rt ~ group * gender, data = df, notch = TRUE,
     col=c("darkorchid", "forestgreen"), ylab="Reaction time (ms)", xaxt="n")
-  AnswerTests: match_call('boxplot(rt ~ group * gender, data = df, notch = TRUE,
-    col=c("darkorchid", "forestgreen"), ylab="Reaction time (ms)", xaxt="n")')
+  AnswerTests: any_of_exprs('boxplot(rt ~ group * gender, data = df, notch = TRUE,
+    col=c("darkorchid", "forestgreen"), ylab="Reaction time (ms)", xaxt="n")', 'boxplot(rt ~ group * gender, data = df, notch = T, col=c("darkorchid", "forestgreen"), ylab="Reaction time (ms)", xaxt="n")')
   Hint: "Just type boxplot(rt ~ group * gender, data = df, notch = TRUE,
     col=c(\"darkorchid\", \"forestgreen\"), ylab=\"Reaction time (ms)\", xaxt=\"n\")."
     
@@ -486,7 +487,7 @@
 - Class: cmd_question
   Output: "Now pull up the documentation for summaryBy() and take a moment to read through it."
   CorrectAnswer: ?summaryBy
-  AnswerTests: omnitest(correctExpr= '?summaryBy')
+  AnswerTests: any_of_exprs('?summaryBy', '?summaryBy()')
   Hint:
 
 - Class: text
