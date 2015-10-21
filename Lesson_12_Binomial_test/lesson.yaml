@@ -223,7 +223,7 @@
 - Class: cmd_question
   Output: Look at the number of correct guesses in the df$hit variable now.
   CorrectAnswer: sum(df$hit, na.rm = TRUE)
-  AnswerTests: omnitest(correctExpr='sum(df$hit, na.rm = TRUE)')
+  AnswerTests: any_of_exprs('sum(df$hit, na.rm = TRUE)', 'sum(df$hit, na.rm = T)')
   Hint: If you're getting NA, it is because you forgot to account for the presence of
     missing values. There's an argument that works with the sum() function that does
     the job, remember?
@@ -231,7 +231,7 @@
 - Class: cmd_question
   Output: And now look at the overall success rate.
   CorrectAnswer: mean(df$hit, na.rm = TRUE)
-  AnswerTests: match_call('mean(df$hit, na.rm = TRUE)')
+  AnswerTests: any_of_exprs('mean(df$hit, na.rm = TRUE)', 'mean(df$hit, na.rm = T)')
   Hint:
     
 - Class: text
