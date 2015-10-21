@@ -158,7 +158,7 @@
   Output: Similar to rbinom(), we can use R to simulate random numbers from many other
     probability distributions. Pull up the documentation for rnorm() now.
   CorrectAnswer: ?rnorm
-  AnswerTests: omnitest('?rnorm')
+  AnswerTests: any_of_exprs('?rnorm', '?rnorm()')
   Hint: Type ?rnorm to view its help file.
 
 - Class: cmd_question
@@ -203,7 +203,7 @@
   Output: Now, you can have R repeat a command using the replicate() function. How about you
     pull up the documentation for replicate()?
   CorrectAnswer: ?replicate
-  AnswerTests: omnitest('?replicate')
+  AnswerTests: any_of_exprs('?replicate', '?replicate()')
   Hint: Type ?replicate to view its help file.
   
 - Class: cmd_question
@@ -390,7 +390,7 @@
     and the standard deviation of cm as the sd of the normal distribution.
     
 - Class: cmd_question
-  Output: Try to do it now and store the result into an object called \"yfit\".
+  Output: Try to do it now and store the result into an object called yfit.
   CorrectAnswer: yfit<-dnorm(xfit,mean=mean(cm),sd=sd(cm))
   AnswerTests: match_call('yfit<-dnorm(xfit,mean=mean(cm),sd=sd(cm))')
   Hint: You nead to use dnorm(), mean() and sd().
@@ -415,7 +415,7 @@
   Hint: "Type lines(xfit, yfit, col=\"blue\", lwd=2)."
   
 - Class: text
-  Output: See what I mean? Let's scale the ylim variable then.
+  Output: See what I mean? Let's scale the yfit variable then.
   
 - Class: cmd_question
   Output: "What you want to do is basically multiply the yfit vector by the length of cm and
