@@ -146,10 +146,10 @@
     population parameter even more closely.
     
 - Class: cmd_question
-  Output: To show you this, I wrote a function called clt(). It takes a long numeric vector
-    (at least 1000 numbers) and a string argument FUN, which can be \"mean\", \"meadian\",
+  Output: "To show you this, I wrote a function called clt(). It takes a long numeric vector
+    (at least 1000 numbers) and a string argument FUN, which can be \"mean\", \"median\",
     \"sd\" (for standard deviation), or \"var\" (for variance). Type in clt(rt_pop,
-    \"mean\") and see what happens. The function takes a moment to run so relax...
+    \"mean\") and see what happens. The function takes a moment to run so relax..."
   CorrectAnswer: clt(rt_pop, "mean")
   AnswerTests: omnitest(correctExpr='clt(rt_pop, "mean")')
   Hint:
@@ -204,8 +204,8 @@
     about the other stuff.
     
 - Class: cmd_question
-  Output: Okay, let's do a z-test of our own. First, you will need to install a package
-    called \"BSDA\". Do it now.
+  Output: "Okay, let's do a z-test of our own. First, you will need to install a package
+    called \"BSDA\". Do it now."
   CorrectAnswer: install.packages("BSDA")
   AnswerTests: omnitest(correctExpr='install.packages("BSDA")')
   Hint: Use install.packages("BSDA").
@@ -220,7 +220,7 @@
   Output: The function we want is called z.test(). Pull up its documentation and familiarise
     yourself with it.
   CorrectAnswer: ?z.test
-  AnswerTests: omnitest(correctExpr='?z.test')
+  AnswerTests: any_of_exprs('?z.test', '?z.test()')
   Hint:
   
 - Class: text
@@ -234,11 +234,11 @@
   Hint:
   
 - Class: text
-  Output: So we're testing the hypothesis that this value is significantly different from
+  Output: "So we're testing the hypothesis that this value is significantly different from
     the population mean (mean(rt_pop)) of 350. Based on population mean and population SD,
     we can estimate the standard deviation of the sampling distribution for the mean. This
     \"meta-SD\" is called the standard error and the formula for it is sd(population) /
-    sqrt(length(x)).
+    sqrt(length(x))."
     
 - Class: cmd_question
   Output: Find the standard error of the mean by substituting rt_pop for population and
@@ -280,16 +280,16 @@
     is to simply divide difference by std_error. This value is known as the z statistic.
     
 - Class: text
-  Output: Our z statistic is larger than |1.96| (that's the absolute value, or abs() in R)
-    and therefore it is statistically significant. We thus reject the null hypothesis of
-    equal means in favour of the alternative that states that the mean RT of our sample is
-    different from the mean RT of the population.
+  Output: Our z statistic is greater than |1.96| (that's the absolute value, or abs() in R)
+    therefore is statistically significant. We thus should reject the null hypothesis of
+    equal means in favour of the alternative, which is that the mean RT of our sample is
+    different from the mean RT of the population).
     
 - Class: cmd_question
-  Output: What about the z.test() I hear you ask? Well, this function does the maths for you.
+  Output: "What about the z.test() I hear you ask? Well, this function does the maths for you.
     See for yourself. Give the function df$rt as the x argument, \"two.sided\" as the
     alternative argument, mean(rt_pop) as the mu argument and sd(rt$pop) as the sigma.x
-    argument.
+    argument."
   CorrectAnswer: z.test(df$rt, alternative = "two.sided", mu = mean(rt_pop), sigma.x =
     sd(rt_pop))
   AnswerTests: match_call('z.test(df$rt, alternative = "two.sided", mu = mean(rt_pop),
