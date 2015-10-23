@@ -93,7 +93,7 @@
   Hint:
   
 - Class: text
-  Output: As you can see the mean is relatively close to 350 (population mean) but it's not
+  Output: As you can see the mean is relatively close to the population mean (349.9385) but it's not
     quite there.
     
 - Class: cmd_question
@@ -131,7 +131,7 @@
   Hint:
 
 - Class: text
-  Output: "This exercise demonstrates two important points: firstly, even though the
+  Output: "This exercise demonstrates two important points. Firstly, even though the
     distribution from which we sampled (rt_pop) was not normal, the sampling distribution
     of a parameter (in our case, the mean) will be sort of normal."
 
@@ -157,7 +157,7 @@
 - Class: text
   Output: So, as you can see, as sample size gets larger, the resulting sampling distribution
     gets closer to normal and its mean gets closer to the population parameter in question,
-    in our case mean(rt_pop) = 350.
+    in our case mean(rt_pop) = 349.9385.
     
 - Class: text
   Output: You can find the source code for the function in a file called clt_function,
@@ -167,7 +167,7 @@
     
 - Class: text
   Output: Back to the z-test. Let's say you want to know whether the mean RT of your sample
-    is different from the population mean RT of 350 ms. Like I said, the z-test assumes that
+    is different from the population mean RT of 350 ms (I'm rounding up from 349.9385). Like I said, the z-test assumes that
     population parameters (such as the mean and standard deviation) are known. Based on these,
     we can find out the properties of the sampling distribution of the mean RT for any given
     sample size, such as its mean and its standard deviation.
