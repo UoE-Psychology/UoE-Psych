@@ -90,10 +90,10 @@
     
 - Class: cmd_question
   Output: Feel free to take a moment to inspect the plot some more to make sure you're down
-    with the concept of varying shapes and critical values. Then type dev.off() to close the
+    with the concept of varying shapes and critical values. Then type graphics.off() to close the
     graph window.
-  CorrectAnswer: dev.off()
-  AnswerTests: omnitest(correctExpr='dev.off()')
+  CorrectAnswer: graphics.off()
+  AnswerTests: omnitest(correctExpr='graphics.off()')
   Hint:
     
 - Class: cmd_question
