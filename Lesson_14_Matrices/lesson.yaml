@@ -70,13 +70,6 @@
   Hint: Column... by... column...
   
 - Class: cmd_question
-  Output: Okay, that command gave us the elements of row 17 of mat_1 in a single vector.
-    Now give me the 7th and 20th element of columns 3 to 10.
-  CorrectAnswer: mat_1[c(7,20), 3:10]
-  AnswerTests: omnitest(correctExpr='mat_1[c(7,20), 3:10]')
-  Hint:
-  
-- Class: cmd_question
   Output: As was the case with df's, you can name the rows and columns of a matrix. Right
     now, they are unnamed. Use dimnames(mat_1) to see for yourself.
   CorrectAnswer: dimnames(mat_1)
@@ -139,7 +132,7 @@
   Output: Okay, now that you know how to index and name matrices, let's look at how to
     create them. Pull up the documentation for the matrix() function and read through it.
   CorrectAnswer: ?matrix
-  AnswerTests: omnitest(correctExpr='?matrix')
+  AnswerTests: any_of_exprs('?matrix', '?matrix()')
   Hint:
   
 - Class: text
@@ -164,7 +157,7 @@
   Output: To see the byrow = TRUE argument in action, create a matrix with the same content
     and nrow but this time add the byrow argument. Call it mat_3.
   CorrectAnswer: mat_3 <- matrix(1:80, nrow = 4, byrow=T)
-  AnswerTests: omnitest(correctExpr='mat_3 <- matrix(1:80, nrow = 4, byrow=T)')
+  AnswerTests: any_of_exprs('mat_3 <- matrix(1:80, nrow = 4, byrow=T)', 'mat_3 <- matrix(1:80, nrow = 4, byrow=TRUE)')
   Hint:
   
 - Class: cmd_question
