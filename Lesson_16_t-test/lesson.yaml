@@ -114,7 +114,7 @@
 
 - Class: text
   Output: We'll continue to work with the hypothesis from Lesson 13 - that the population mean for
-    reaction times is 350ms. 342ms isn't far off, but it's difficult to say whether the
+    reaction times is 350ms. Whilst 342ms isn't far off, but it's difficult to say whether the
     difference of ~7.64 ms is statistically meaningful. That's why we need to run the test.
   
 - Class: cmd_question
