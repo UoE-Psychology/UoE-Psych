@@ -63,7 +63,7 @@
     
 - Class: mult_question
   Output: Look at the matrix printed above again. What element will you get if you type
-    mat_1[11]?
+    mat_1[12]?
   AnswerChoices: 54; 47
   CorrectAnswer: 47
   AnswerTests: omnitest(correctVal= '47')
