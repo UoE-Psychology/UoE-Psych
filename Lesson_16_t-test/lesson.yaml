@@ -114,8 +114,9 @@
 
 - Class: text
   Output: We'll continue to work with the hypothesis from Lesson 13 - that the population mean for
-    reaction times is 350ms. Whilst 342ms isn't far off, but it's difficult to say whether the
-    difference of ~7.64 ms is statistically meaningful. That's why we need to run the test.
+    reaction times is 350ms. We now want to see whether our sample mean is different. 
+    Whilst 342ms isn't far off, but it's difficult to say whether the difference of ~7.64 ms 
+    is statistically meaningful. That's why we need to run the test.
   
 - Class: cmd_question
   Output: Since we used sd for the z-test calculation, to mix it up, let's work out our t-test
@@ -165,7 +166,7 @@
     is...
   
 - Class: cmd_question
-  Output: Okay, apply the above formula for the t statistic and store the retult in an object
+  Output: Okay, apply the above formula for the t statistic and store the result in an object
     called t_stat.
   CorrectAnswer: t_stat <- (rt_mean - 350) / sqrt(rt_var/n)
   AnswerTests: omnitest(correctExpr='t_stat <- (rt_mean - 350) / sqrt(rt_var/n)')
@@ -201,7 +202,7 @@
     our chi^2 statistic. There's an equivalent function for the t distribution: pt(). Pull
     up the documentation for it."
   CorrectAnswer: ?pt
-  AnswerTests: omnitest(correctExpr='?pt')
+  AnswerTests: any_of_exprs('?pt', '?pt()')
   Hint:
 
 - Class: cmd_question
@@ -234,7 +235,7 @@
     other statistical tests), there's a dedicated R function that does the numbers for you.
     Look up the t.test() function's documentation and read through it.
   CorrectAnswer: ?t.test
-  AnswerTests: omnitest(correctExpr='?t.test')
+  AnswerTests: any_of_exprs('?t.test', '?t.test()')
   Hint:
   
 - Class: cmd_question
