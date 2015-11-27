@@ -1,5 +1,5 @@
 - Class: meta
-  Course: Y2 Psychology RMS1
+  Course: UoE-Psychology
   Lesson: Lesson 16 t-test
   Author: Milan Valasek
   Type: Standard
@@ -47,7 +47,7 @@
   Output: Here is a graph showing how the shape of the t distribution changes depending on
     the number of degrees of freedom. Again, do not close the display window manually. As
     you can see, with 1 DF, the distribution looks a bit pointy with rather fat tails (that
-    \*is\* a technical term).
+    *is* a technical term).
   Figure: t_plot.R
   FigureType: new
 
