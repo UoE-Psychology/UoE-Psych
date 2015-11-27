@@ -1,4 +1,3 @@
-windows(8.5,5)
 plot(5,5,type="n",xlim=c(-5, 5),ylim=c(0,0.4), xlab = "t",
      ylab = "Density", bty="l", axes = F,
      main = expression(paste("The t distribution")))
