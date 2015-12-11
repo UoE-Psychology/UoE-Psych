@@ -1,5 +1,5 @@
 - Class: meta
-  Course: Y2 Psychology RMS1
+  Course: UoE-Psychology
   Lesson: Lesson 18 Linear regression
   Author: Milan Valasek
   Type: Standard
@@ -137,7 +137,7 @@
     wrong than bad ones and can be very useful."
     
 - Class: text
-  Output: So how can we tell if our mode, whatever it may be, is any good? Well, we
+  Output: So how can we tell if our model, whatever it may be, is any good? Well, we
     can compare it to the most basic model which is likely to be rather bad and see
     if it predicts the outcome more accurately.
     
@@ -213,7 +213,7 @@
     the linear model - lm() - you put in the abline() function in order to draw the
     blue line across the scatter plot. Pull up the documentation for lm().
   CorrectAnswer: ?lm
-  AnswerTests: omnitest(correctExpr='?lm')
+  AnswerTests: any_of_exprs('?lm', '?lm()')
   Hint:
   
 - Class: text
@@ -429,15 +429,15 @@
 - Class: cmd_question
   Output: As you can see a +1 SD change in anxiety score results in -0.2 SD change in
     reaction time. As always, there's a more straightforward way how to get standardised
-    regression coefficients in R. Install the package QuantPsych so I can show you.
-  CorrectAnswer: install.packages("QuantPsych")
-  AnswerTests: omnitest(correctExpr='install.packages("QuantPsych")')
+    regression coefficients in R. Install the package QuantPsyc so I can show you.
+  CorrectAnswer: install.packages("QuantPsyc")
+  AnswerTests: omnitest(correctExpr='install.packages("QuantPsyc")')
   Hint: Don't forget the double quotes...
 
 - Class: cmd_question
   Output: What are you waiting for, load it! :)
-  CorrectAnswer: library(QuantPsych)
-  AnswerTests: omnitest(correctExpr='library(QuantPsych)')
+  CorrectAnswer: library(QuantPsyc)
+  AnswerTests: omnitest(correctExpr='library(QuantPsyc)')
   Hint:
 
 - Class: cmd_question

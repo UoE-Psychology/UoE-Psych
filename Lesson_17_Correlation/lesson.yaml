@@ -1,5 +1,5 @@
 - Class: meta
-  Course: Y2 Psychology RMS1
+  Course: UoE-Psychology
   Lesson: Lesson 17 Correlation
   Author: Milan Valasek
   Type: Standard
@@ -129,14 +129,14 @@
     lesson for t-test statistic. To refresh your memory, pull up the documentation for the
     function first.
   CorrectAnswer: ?pt
-  AnswerTests: omnitest(correctExpr='?pt')
+  AnswerTests: any_of_exprs('?pt', '?pt()')
   Hint:
   
 - Class: cmd_question
   Output: Since the value of the correlation is negative you need to look at the lower tail
     of the t-distribution. Also, say we want a 2-tailed p-value so you need to multiply the
     command by 2.
-  CorrectAnswer: pt(r_t, length(df$age) - 2, lower.tail = FALSE) * 2
+  CorrectAnswer: pt(r_t, length(df$age) - 2, lower.tail = TRUE) * 2
   AnswerTests: match_call('pt(r_t, length(df$age) - 2, lower.tail = TRUE) * 2')
   Hint: You need, r_t, length(df$age) - 2, and the lower.tail argument.
   
@@ -233,7 +233,7 @@
     have noticed that, unlike most times that I've shown you a new function, I did not ask
     you to pull up the documentation for cor(). Do it now and have a wee read.
   CorrectAnswer: ?cor
-  AnswerTests: omnitest(correctExpr='?cor')
+  AnswerTests: any_of_exprs('?cor', '?cor()')
   Hint:
   
 - Class: cmd_question
@@ -272,7 +272,7 @@
     A coef this big is most likely significant but let's test it anyway. But first,
     pull up the documentation for cor.test().
   CorrectAnswer: ?cor.test
-  AnswerTests: omnitest(correctExpr='?cor.test')
+  AnswerTests: any_of_exprs('?cor.test', '?cor.test()')
   Hint:
   
 - Class: cmd_question
@@ -348,7 +348,7 @@
 - Class: cmd_question
   Output: Good. Now pull up the documentation for the hetcor() function.
   CorrectAnswer: ?hetcor
-  AnswerTests: omnitest(correctExpr='?hetcor')
+  AnswerTests: any_of_exprs('?hetcor', '?hetcor()')
   Hint:
   
 - Class: text
@@ -467,7 +467,7 @@
 - Class: cmd_question
   Output: "We can get around the issue by giving the function the absolute value of the
     z-scores, thus turning them all into positive and only looking at the right tail
-    probabilities. Give it a go now: abs(cor_z), the right mean, the right sd and
+    probabilities. Give it a go now: abs(cor_z), the mean, the sd and
     lower.tail = FALSE."
   CorrectAnswer: pnorm(abs(cor_z), mean = 0, sd = cor_mat$std.errors, lower.tail=FALSE)
   AnswerTests: match_call('pnorm(abs(cor_z), mean = 0, sd = cor_mat$std.errors,
@@ -491,7 +491,7 @@
   Hint:
   
 - Class: cmd_question
-  Output: Okay, there are a bit difficult to read, since their all in the x * 10^n format.
+  Output: Okay, they're are a bit difficult to read, since their all in the x * 10^n format.
     You can make them more legible by rounding cor_p to 3 decimal places. Do it now.
   CorrectAnswer: round(cor_p, 3)
   AnswerTests: omnitest(correctExpr='round(cor_p, 3)')

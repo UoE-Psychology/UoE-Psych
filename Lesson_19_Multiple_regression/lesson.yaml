@@ -1,5 +1,5 @@
 - Class: meta
-  Course: Y2 Psychology RMS1
+  Course: UoE-Psychology
   Lesson: Lesson 19 Multiple regression
   Author: Milan Valasek
   Type: Standard
@@ -82,7 +82,7 @@
     
 - Class: text
   Output: "Each regression coefficient represents the change in predicted RT with
-    a unit change in the given predictor: +1 on anx score od age, female -> male
+    a unit change in the given predictor: +1 on anx score or age, female -> male
     -> non-binary, and control -> experimental."
 
 - Class: text
@@ -98,7 +98,7 @@
     feeding the resulting variable into the regression. Alternatively, you can use
     the scale() function. Pull up its documentation now.
   CorrectAnswer: ?scale
-  AnswerTests: omnitest(correctExpr='?scale')
+  AnswerTests: any_of_exprs('?scale', '?scale()')
   Hint:
   
 - Class: cmd_question
@@ -327,7 +327,7 @@
     = FALSE) + group."
     
 - Class: text
-  Output: Now, the model comparison and variable selection functions I ust show you can't
+  Output: Now, the model comparison and variable selection functions I just showed you can't
     tell you which model you should choose. They can, however, give you valuable
     information you should consider when making an analytic decision.
     
