@@ -1,4 +1,5 @@
-windows(8.5,5)
+#windows(8.5,5)
+#windows() doesn't seem to be recognised in UNIX
 plot(5,5,type="n",xlim=c(0,16),ylim=c(0,0.5), xlab = expression(chi^2),
      ylab = "Density", bty="l", axes = F,
      main = expression(paste("The ", chi^2, " distribution")))
