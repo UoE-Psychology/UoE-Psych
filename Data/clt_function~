@@ -13,10 +13,10 @@ clt <- function(x, FUN) {
   }
   names(y) <- c(5, 30, 100, 500)
   means <- colMeans(y)
-  par(mfrow = c(2, 2), mar=c(1,1,1,1))
+  par(mfrow = c(2, 2))
   for (i in 1:4) {
     hist(y[,i], main = paste0("Sample size = ",names(y)[i], ", mean = ", round(means[i],3)),
          breaks = 50, xlab = NULL)
   }
-  par(mfrow = c(1, 1), mar=c(5.1,4.1,4.1,2.1))
+  par(mfrow = c(1, 1))
 }
