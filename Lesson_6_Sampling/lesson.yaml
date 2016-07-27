@@ -423,7 +423,7 @@
      yfit*diff(h$mids[1:2])*length(cm). Reassign these values to the yfit vector now."
   CorrectAnswer: yfit <- yfit*diff(h$mids[1:2])*length(cm) 
   AnswerTests: any_of_exprs('yfit <- yfit*diff(h$mids[1:2])*length(cm)', 'yfit <- yfit*diff(hist(cm)$mids[1:2])*length(cm)')
-  Hint: "Type yfit <- yfit*diff(h$mids[1:2])*length(cm)."
+  Hint: "Type yfit <- yfit*diff(hist(cm)$mids[1:2])*length(cm)."
   
 - Class: text
   Output: That's kind of okay but I don't like two things about the plot. Firstly, we only
