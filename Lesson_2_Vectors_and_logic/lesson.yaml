@@ -158,7 +158,7 @@
   Hint: "Try typing: (FALSE == TRUE) == FALSE"
   
 - Class: text
-  Output: "The reason why it came out TRUE is that R first evaluated FALSE == TREU,
+  Output: "The reason why it came out TRUE is that R first evaluated FALSE == TRUE,
     which is FALSE, since the two are not equal and then compared the result to FALSE."
     
 - Class: text
@@ -288,7 +288,7 @@
 - Class : cmd_question
   Output: "Sometimes all you need to know is whether all the elements in a variable meet a
     certain criterion. In that case, you can use the all() function. Give it a go, ask R if
-    all the memebers of beatles are \"Pete\"."
+    all the members of beatles are \"Pete\"."
   CorrectAnswer: "all(beatles == \"Pete\")"
   AnswerTests: omnitest(correctExpr='all(beatles == \"Pete\")')
   Hint: "Just type all(beatles == \"Pete\")."
@@ -369,7 +369,7 @@
     is the best (haha, Pete Best) option."
     
 - Class : cmd_question
-  Output: "I think you are ready for the grand finale now. It's going to be a bit of a
+  Output: "I think you are ready for the grand finale now. It's going to be a bit of a struggle
     but don't despair if you don't get it right the first time around. Think of the simplest,
     most efficient, and most elegant way of replacing Pete with Ringo using all you have
     learnt about R thus far. In other words you are assigning new values to the beatles
